@@ -1,0 +1,1 @@
+%Funktion som beskriver skillnaden i X-led

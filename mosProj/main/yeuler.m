@@ -1,0 +1,1 @@
+%Eulers stegmetod för att beräkna ODEY
