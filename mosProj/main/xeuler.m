@@ -14,12 +14,10 @@ v = zeros(1,length(t));
 v(1) = v0;
 
 
-for i = 1:n
-
-     if v(i)+h*fun(t(i),v(i)) <=0
-      
-        v(i:n) = 0; %all hastighet till 0
-        x(i:n) = x(i); %positionen kommer inte ändras
+for i = 1:n+1
+     if v(i)+h*fun(t(i),v(i)) <= 0
+        v(i+1) = 0; %hastighet till 0
+        x(i+1) = x(i); %positionen kommer inte ändras
         break;
     end
 
