@@ -3,7 +3,7 @@ function [x,v,t] = xeuler(fun,tspan,v0, n)
 
 a = tspan(1);
 b = tspan(2);
-t = linspace(a,b,n+1);
+t = linspace(a,b,n);
 h = t(2)-t(1);
 
 %Skapar vektor med 0:or, 1st dx för varje steglängd(h).
@@ -15,8 +15,18 @@ v(1) = v0;
 
 
 for i = 1:n
+
+     if v(i)+h*fun(t(i),v(i)) <=0
+      
+        v(i:n) = 0; %all hastighet till 0
+        x(i:n) = x(i); %positionen kommer inte ändras
+        break;
+    end
+
     v(i+1) = v(i) + h*fun(t(i),v(i));
     x(i+1) = x(i) + h*v(i+1);
+
+
 end
 
 

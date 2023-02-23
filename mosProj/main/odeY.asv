@@ -1,0 +1,9 @@
+%Funktion som beskriver skillnaden i Y-led
+
+function dy = odeY(y)
+
+
+
+dy = -0.3*y*exp();
+
+end
