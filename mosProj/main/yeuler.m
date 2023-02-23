@@ -20,7 +20,7 @@ y(1) = y0;
 
 
 for i = 1:n
-    angle = angleFromPos(y(i),h,maxTheta);
+    angle = angleFromPos(y(i),h,maxTheta,length(y));
     v(i+1) = v(i) + h*fun(angle);
     y(i+1) = y(i) + h*v(i+1);
 end

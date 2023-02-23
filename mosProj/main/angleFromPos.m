@@ -1,6 +1,6 @@
-function angle = angleFromPos(pos,h,maxTheta)
+function angle = angleFromPos(pos,h,maxTheta,n)
 
-angles = zeros()
+angles = zeros(1,)
 
 angles = 0+maxTheta:h:pi-maxTheta;
 board = -0.5:h:0.5;
