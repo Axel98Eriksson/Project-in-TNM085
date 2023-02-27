@@ -1,0 +1,26 @@
+function [y,v,t] = yEuler(fun,tspan,y0,n)
+    
+    a = tspan(1);
+    b = tspan(2);
+    t = linspace(a,b,n+1);
+    h = t(2)-t(1);
+    
+    y = zeros(1,n+1);
+    v = zeros(1,n+1);
+    
+    y(1) = y0;
+
+    for i = 1:n
+        pos = y(i);
+
+        if i == 1
+            v(i+1) = v(i) + h*fun(pos,0);
+            
+        else
+            v(i+1) = v(i) + h*fun(pos,v(i)-v(i-1));
+        end
+%         v(i+1) = v(i) + h*fun(pos,v(i));
+        y(i+1) = y(i)+ h*v(i+1);
+    end
+
+end
