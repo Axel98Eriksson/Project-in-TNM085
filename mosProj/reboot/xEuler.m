@@ -1,4 +1,4 @@
-function [x,v,t] = xEuler(fun,tspan,v0,n)
+function [x,v,t] = xEuler(fun,tspan,v0,n,theta)
 
 a = tspan(1);
 b = tspan(2);
@@ -8,7 +8,7 @@ h = t(2)-t(1);
 x = zeros(1,n);
 v = zeros(1,n);
 
-v(1) = v0;
+v(1) = v0*cos(theta);
 
     for i = 1:n
         if v(i) + h*fun() <= 0

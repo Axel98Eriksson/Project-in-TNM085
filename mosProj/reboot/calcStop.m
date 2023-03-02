@@ -2,7 +2,7 @@ function [x,vx,y,vy] = calcStop(x,vx,y,vy,n)
 
 g = 9.8;
 m = 0.25;
-fk = 0.1;
+fk = 0.07;
 
 
 for i = 1:n
@@ -11,11 +11,11 @@ for i = 1:n
     
 %     vproj = ((m*g*v)/(v*v))*v;
 
-    ff = m*-g*fk;
+    ff = m*g*fk;
 
     
 
-    if v+ff <= 0
+    if v <= ff
         vx(i:n+1) = 0;
         vy(i:n+1) = 0;
 
