@@ -17,7 +17,7 @@ function [y,v,t] = yEuler(fun,tspan,y0,v0,n,theta)
         if i == 1
             v(i+1) = v(i) + h*fun(pos,0);
         else
-            v(i+1) = v(i) + h*fun(pos,v(i)-v(i-1));
+            v(i+1) = v(i) + h*fun(pos,v(i)-v(i-1)); %v(i)-v(i-1) = accelerationen
         end
 %         v(i+1) = v(i) + h*fun(pos,v(i));
         y(i+1) = y(i)+ h*v(i+1);

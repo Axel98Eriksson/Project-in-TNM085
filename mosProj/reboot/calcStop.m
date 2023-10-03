@@ -5,15 +5,14 @@ m = 0.25;
 fk = 0.07;
 
 
+
 for i = 1:n
 
-    v = sqrt((vx(i)*vx(i))+(vy(i)*vy(i))); %saknas mg?
-    
-%     vproj = ((m*g*v)/(v*v))*v;
+    v = sqrt((vx(i)*vx(i))+(vy(i)*vy(i)));
+
 
     ff = m*g*fk;
 
-    
 
     if v <= ff
         vx(i:n+1) = 0;
